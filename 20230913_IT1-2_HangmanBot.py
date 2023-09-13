@@ -65,7 +65,7 @@ def process_all(updates):
                     if w in text:
                         feedback += w + " "
                     else:
-                        feedback += "_ "
+                        feedback += "_"
                         succeed = False
                 gamelist[chat][1] = succeed
                 send_message(feedback, chat)
