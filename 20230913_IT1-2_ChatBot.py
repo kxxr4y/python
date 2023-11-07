@@ -1,15 +1,15 @@
-import json
+import json # 오브젝트를 딕셔너리로
 import requests
-import time
+import time # 시간과 관련된 기능제공
 import urllib
 
 TOKEN = "6516167516:AAHM9UaOf3gqs5MPlFQNoXqaYI1SPOSj5mY"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
-def get_url(url):
+def get_url(url): # 문자열 제공
     response = requests.get(url)
-    content = response.content.decode("utf8")
+    content = response.content.decode("utf8") # 유니코드
     return content
 
 
@@ -20,7 +20,7 @@ def get_json_from_url(url):
 
 
 def get_updates(offset=None):
-    url = URL + "getUpdates"
+    url = URL + "getUpdates" # https://api.telegram.org/bot6516167516:AAHM9UaOf3gqs5MPlFQNoXqaYI1SPOSj5mY/getUpdates
     if offset:
         url += "?offset={}".format(offset)
     js = get_json_from_url(url)
@@ -56,14 +56,14 @@ def send_message(text, chat_id):
 
 
 def main():
-    last_update_id = None
+    last_update_id = None # 값이 없어 참인지 구분이 안됨
     while True:
         updates = get_updates(last_update_id)
-        if len(updates["result"]) > 0:
+        if len(updates["result"]) > 0: # ID 값이 존재하면 값이 0<1 True
             last_update_id = get_last_update_id(updates) + 1
             echo_all(updates)
         time.sleep(0.5)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # 첫번째 호출
     main()
