@@ -55,7 +55,7 @@ def send_message(text, chat_id):
     get_url(url)
 
 
-def main():
+def main(): # 두번째 호출
     last_update_id = None # 값이 없어 참인지 구분이 안됨
     while True:
         updates = get_updates(last_update_id)
