@@ -2,10 +2,10 @@
 # from math import sin, cos, tan
 # import math as m
 # import random as r
-import sys
-import os
+# import sys
+# import os
 
-def main():
+# def main():
     # print(math.sin(1))
     # print(math.cos(2))
     # print(math.tan(1))
@@ -57,7 +57,7 @@ def main():
     # os.rename("test.txr", "new.txt") # 파일 이름변경
     # os.remove("test.txt") # 파일 삭제
     # os.system("dir") # 시스템 명령어 실행
-    pass
+    # pass
 
 
 if __name__ == "__main__":
